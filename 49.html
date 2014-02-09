@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<title>
+  49 grid
+</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body style="background-color: #8B915B">
+
+<div id="content" style="padding:0;margin:0">
+</div>
+
+<script>
+
+var data =
+{"lights":["#8B915B","#57622A","#91996A","#758753","#718645","#778748","#829254","#728A42","#3A531C","#1F1516","#606A38","#839A59","#5C7A2A","#B8CA8F","#5C7332","#828B53","#2B201E","#616F3C","#6F8144","#130907","#1B1405","#707F4A","#395519","#3E2822","#81502F","#A2714B","#261012","#4C631A","#6F8940","#33491A","#715142","#AB9894","#4A3127","#566B28","#3B4E20","#143000","#22272D","#8491A2","#050409","#9C6934","#6A7C48","#424D21","#3F5A23","#574539","#747F85","#A6A5A1","#472C21","#334A15","#687F50","#000000"]}
+;
+
+var grid = [
+  [ 0,  1,  2,  3,   4,  5,  6, ],
+  [ 13, 12, 11, 10,  9,  8,  7, ],
+  [ 14, 15, 16, 17, 18, 19, 20, ],
+  [ 27, 26, 25, 24, 23, 22, 21, ],
+  [ 28, 29, 30, 31, 32, 33, 34, ],
+  [ 41, 40, 39, 38, 37, 36, 35, ],
+  [ 42, 43, 44, 45, 46, 47, 48  ] // we ignore 49
+];
+
+
+for(row_idx in grid) {
+  for(col_idx in grid[row_idx]) {
+  	var colour = data.lights[grid[row_idx][col_idx]];
+  	$('#content').append(
+  		"<div style='margin:0;padding:0;float:left;width:10px; height:10px; background-color: "+colour+"'>");
+  	console.log(colour, row_idx, col_idx);
+  }
+  $('#content').append("<div style='clear:both'>");
+}
+
+</script>
+
+
+</body>
+</html>
